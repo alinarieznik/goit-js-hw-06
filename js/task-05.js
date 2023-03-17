@@ -17,4 +17,3 @@ function onInputChange(event) {
 
 
 
-// what is event in function
