@@ -7,49 +7,47 @@ console.log(passwordInputEL);
 
 formEl.addEventListener('submit', onFormSubmit);
 
-function onFormSubmit (event) {
-    event.preventDefault();
+function onFormSubmit(event) {
+  event.preventDefault();
 
-    const {email, password} = event.currentTarget.elements;
-    // console.log(event.currentTarget.elements);
+  const { email, password } = event.currentTarget.elements;
+  // console.log(event.currentTarget.elements);
 
-    if (email.value === "" || password.value === "") {
-        alert("Please fill in all the fields!");
-    } else {
-         const data = {
-            email: email.value,
-            password: password.value,
-         }
-         console.log(data);
+  if (!email.value || !password.value) {
+    alert('Please fill in all the fields!');
+  } else {
+    const data = {
+      email: email.value,
+      password: password.value,
+    };
+    console.log(data);
+  }
 
-    }
+  // function resetInput () {
+  //     formEl.reset()
+  // }
+  // resetInput();
 
-    // function resetInput () {
-    //     formEl.reset()
-    // }
-    // resetInput();
-
-    formEl.reset();
+  formEl.reset();
 }
 
-// ??? to figure out why doesn't it work 
-// function onFormSubmit (event) {
-//      event.preventDefault();
-     
-//      const formData = new FormData(event.currentTarget);
-//     //  console.log(formData);
-     
-//      formData.forEach((value, name) => {
+// ??? we do not use for it
+// function onFormSubmit(event) {
+//   event.preventDefault();
 
-//         if (value === "") {
-//             alert("Please fill in all the fields!");
-//         } else {
-//             const data = {
-//                 name: value, 
-//             }
-//             console.log(data)
-//         }
+//   const formData = new FormData(event.currentTarget);
+//   //  console.log(formData);
 
-//         formEl.reset();
-//       });
+//   formData.forEach((value, name) => {
+//     if (value === '') {
+//       alert('Please fill in all the fields!');
+//     } else {
+//       const data = {
+//         name: value,
+//       };
+//       console.log(data);
+//     }
+
+//     formEl.reset();
+//   });
 // }
